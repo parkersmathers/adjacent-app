@@ -43,13 +43,19 @@ section {
 }
 
 section header {
-  text-align: left;
   width: 100%;
+  text-align: left;
 }
 
 section header h2 {
-  padding: 25px 10px 10px;
+  margin: 50px 0 0;
+  padding: 0 10px;
   display: inline-block;
+}
+
+section > a {
+  text-align: right;
+  padding: 15px;
 }
 
 ul,
@@ -89,4 +95,8 @@ li div p {
 div:first-child>p:first-child {
   font-size: calc(10px + 1vmin);
   font-weight: 400;
+}
+
+button {
+  margin: 5px;
 }
