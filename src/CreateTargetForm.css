@@ -1,0 +1,43 @@
+form {
+  max-width: 550px;
+  padding: 30px 75px;
+  margin: 0 auto;
+  background-color: rgb(255, 248, 250);
+}
+
+form section h2 {
+  border-bottom: 1px solid lightgray;
+  margin: 5px 0;
+}
+
+form label {
+  font-weight: 100px;
+  margin: 18px 0 8px;
+  text-align: left;
+  padding-left: 8px;
+}
+
+form input {
+  padding: 12px 8px;
+  font-size: calc(10px + .8vmin);
+  border: none;
+}
+
+form input::placeholder {
+  color: lightgray;
+}
+
+form input:last-child {
+  margin-bottom: 40px;
+}
+
+form button {
+  font-size: calc(10px + 1vmin);
+  background-color: ghostwhite;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.10);
+  color: gray;
+  padding: 10px;
+  margin: 0 -5px 40px;
+  width: 100%;
+}
