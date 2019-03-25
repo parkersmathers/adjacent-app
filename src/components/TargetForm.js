@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-import './CreateTargetForm.css'
+import './TargetForm.css'
 
-const CreateTargetForm = props => {
+const TargetForm = props => {
   const initialFormState = {
     companyId: null,
     companyName: '',
@@ -132,4 +132,4 @@ const CreateTargetForm = props => {
   )
 }
 
-export default CreateTargetForm
+export default TargetForm
