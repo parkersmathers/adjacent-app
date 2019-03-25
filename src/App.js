@@ -25,38 +25,37 @@ const App = () => {
           <header>
             <h2>Companies</h2>
           </header>
-          <a href='#form'>New</a>
           <ul>
             {companies.map(c => (
-                <li key={c.companyId}>
-                  <div>
-                    <p>{c.companyCard.company.name}</p>
-                    <p>{c.companyCard.address.city}</p>
-                    <p>{c.companyCard.website}</p>
-                  </div>
-                  <div>
-                    <p>{c.contactName}</p>
-                    <p>{c.contactJobTitle}</p>
-                    <p>{c.contactPhone}</p>
-                    <p>{c.contactEmail}</p>
-                  </div>
-                  <div>
-                    <p>Market: {c.companyMarket}</p>
-                    <p>Employees: {c.companySize}</p>
-                    <p>Funding: ${c.companyFunding}</p>
-                  </div>
-                  <div>
-                    <button>Edit</button>
-                    <button>Delete</button>
-                  </div>
-                  <div>
-                    <button>Researching</button>
-                    <button>Pending Approval</button>
-                    <button>Approved</button>
-                    <button>Declined</button>
-                  </div>
-                </li>
-              ))}
+              <li key={c.companyId}>
+                <div>
+                  <p>{c.companyCard.company.name}</p>
+                  <p>{c.companyCard.address.city}</p>
+                  <p>{c.companyCard.website}</p>
+                </div>
+                <div>
+                  <p>{c.contactName}</p>
+                  <p>{c.contactJobTitle}</p>
+                  <p>{c.contactPhone}</p>
+                  <p>{c.contactEmail}</p>
+                </div>
+                <div>
+                  <p>Market: {c.companyMarket}</p>
+                  <p>Employees: {c.companySize}</p>
+                  <p>Funding: ${c.companyFunding}</p>
+                </div>
+                <div>
+                  <button>Edit</button>
+                  <button>Delete</button>
+                </div>
+                <div>
+                  <button>Researching</button>
+                  <button>Pending Approval</button>
+                  <button>Approved</button>
+                  <button>Declined</button>
+                </div>
+              </li>
+            ))}
           </ul>
         </section>
         <CreateTargetForm createTarget={createTarget} />

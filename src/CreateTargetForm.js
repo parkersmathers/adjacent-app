@@ -28,7 +28,7 @@ const CreateTargetForm = props => {
     <form
       onSubmit={event => {
         event.preventDefault()
-        if (!company.companyName || !company.contactName) return
+        if (!company.companyName) return
 
         props.createTarget(company)
         setCompany(initialFormState)
@@ -39,26 +39,24 @@ const CreateTargetForm = props => {
         <label>Name*:</label>
         <input
           type='text'
-          id='company-name'
-          name='company-name'
+          name='companyName'
           placeholder='Company name'
           value={company.companyName}
           onChange={handleInputChange}
+          required
         />
-        <label htmlFor='company-location'>Location:</label>
+        <label>Location:</label>
         <input
           type='text'
-          id='company-location'
-          name='company-location'
+          name='companyLocation'
           placeholder='City'
           value={company.companyLocation}
           onChange={handleInputChange}
         />
-        <label htmlFor='company-website'>Website:</label>
+        <label>Website:</label>
         <input
           type='text'
-          id='company-website'
-          name='company-website'
+          name='companyWebsite'
           placeholder='Company website'
           value={company.companyWebsite}
           onChange={handleInputChange}
@@ -67,38 +65,34 @@ const CreateTargetForm = props => {
 
       <section>
         <h2>Key Contact</h2>
-        <label htmlFor='contact-name'>Name*:</label>
+        <label>Name*:</label>
         <input
           type='text'
-          id='contact-name'
-          name='contact-name'
+          name='contactName'
           placeholder='Contact name'
           value={company.contactName}
           onChange={handleInputChange}
         />
-        <label htmlFor='contact-jobtitle'>Job Title:</label>
+        <label>Job Title:</label>
         <input
           type='text'
-          id='contact-jobtitle'
-          name='contact-jobtitle'
+          name='contactJobtitle'
           placeholder='Contact job title'
           value={company.contactJobtitle}
           onChange={handleInputChange}
         />
-        <label htmlFor='contact-phone'>Phone:</label>
+        <label>Phone:</label>
         <input
           type='tel'
-          id='contact-phone'
-          name='contact-phone'
+          name='contactPhone'
           placeholder='Contact phone'
           value={company.contactPhone}
           onChange={handleInputChange}
         />
-        <label htmlFor='contact-email'>Email:</label>
+        <label>Email:</label>
         <input
           type='email'
-          id='contact-email'
-          name='contact-email'
+          name='contactEmail'
           placeholder='Contact email'
           value={company.contactEmail}
           onChange={handleInputChange}
@@ -107,29 +101,26 @@ const CreateTargetForm = props => {
 
       <section>
         <h2>Financial Performance</h2>
-        <label htmlFor='performance-market'>Market:</label>
+        <label>Market:</label>
         <input
           type='text'
-          id='performance-market'
-          name='performance-market'
+          name='companyMarket'
           placeholder='Market'
           value={company.companyMarket}
           onChange={handleInputChange}
         />
-        <label htmlFor='performance-employees'>Job Title:</label>
+        <label>Job Title:</label>
         <input
           type='text'
-          id='performance-employees'
-          name='performance-employees'
+          name='companyEmployees'
           placeholder='Number of employees'
           value={company.companySize}
           onChange={handleInputChange}
         />
-        <label htmlFor='performance-funding'>Funding:</label>
+        <label>Funding:</label>
         <input
           type='number'
-          id='performance-funding'
-          name='performance-funding'
+          name='companyFunding'
           placeholder='Total funding'
           value={company.companyFunding}
           onChange={handleInputChange}
