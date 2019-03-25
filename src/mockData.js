@@ -5,7 +5,9 @@ export function getData() {
     let data = []
     for (let i = 0; i <= n; i++) {
       data.push({
-        companyCard: faker.helpers.createCard(),
+        companyName: faker.company.companyName(),
+        companyLocation: faker.address.city(),
+        companyWebsite: faker.internet.url(),
         contactName: faker.name.findName(),
         contactJobTitle: faker.name.jobTitle(),
         contactPhone: faker.phone.phoneNumberFormat(),
