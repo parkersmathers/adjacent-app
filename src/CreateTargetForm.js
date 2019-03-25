@@ -8,7 +8,7 @@ const CreateTargetForm = props => {
     companyLocation: '',
     companyWebsite: '',
     contactName: '',
-    contactJobtitle: '',
+    contactJobTitle: '',
     contactPhone: '',
     contactEmail: '',
     companyMarket: '',
@@ -65,7 +65,7 @@ const CreateTargetForm = props => {
 
       <section>
         <h2>Key Contact</h2>
-        <label>Name*:</label>
+        <label>Name:</label>
         <input
           type='text'
           name='contactName'
@@ -78,7 +78,7 @@ const CreateTargetForm = props => {
           type='text'
           name='contactJobtitle'
           placeholder='Contact job title'
-          value={company.contactJobtitle}
+          value={company.contactJobTitle}
           onChange={handleInputChange}
         />
         <label>Phone:</label>

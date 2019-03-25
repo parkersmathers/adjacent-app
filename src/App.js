@@ -26,23 +26,23 @@ const App = () => {
             <h2>Companies</h2>
           </header>
           <ul>
-            {companies.map(c => (
-              <li key={c.companyId}>
+            {companies.map(company => (
+              <li key={company.companyId}>
                 <div>
-                  <p>{c.companyCard.company.name}</p>
-                  <p>{c.companyCard.address.city}</p>
-                  <p>{c.companyCard.website}</p>
+                  <p>{company.companyName}</p>
+                  <p>{company.companyLocation}</p>
+                  <p>{company.companyWebsite}</p>
                 </div>
                 <div>
-                  <p>{c.contactName}</p>
-                  <p>{c.contactJobTitle}</p>
-                  <p>{c.contactPhone}</p>
-                  <p>{c.contactEmail}</p>
+                  <p>{company.contactName}</p>
+                  <p>{company.contactJobTitle}</p>
+                  <p>{company.contactPhone}</p>
+                  <p>{company.contactEmail}</p>
                 </div>
                 <div>
-                  <p>Market: {c.companyMarket}</p>
-                  <p>Employees: {c.companySize}</p>
-                  <p>Funding: ${c.companyFunding}</p>
+                  <p>Market: {company.companyMarket}</p>
+                  <p>Employees: {company.companySize}</p>
+                  <p>Funding: ${company.companyFunding}</p>
                 </div>
                 <div>
                   <button>Edit</button>
