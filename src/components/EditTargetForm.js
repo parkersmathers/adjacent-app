@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
+import PropTypes from 'prop-types'
 import './TargetForm.css'
 
-const EditTargetForm = props => {
-  const [company, setCompany] = useState(props.currentCompany)
+const EditTargetForm = ({currentCompany, updateTarget, setEditing}) => {
+  const [company, setCompany] = useState(currentCompany)
 
   const handleInputChange = event => {
     const { name, value } = event.target
@@ -14,7 +15,7 @@ const EditTargetForm = props => {
     <form
       onSubmit={event => {
         event.preventDefault()
-        props.updateTarget(company.companyId, company)
+        updateTarget(company.companyId, company)
       }}
     >
       <section>
@@ -156,9 +157,15 @@ const EditTargetForm = props => {
       </section>
 
       <button type='submit'>Update</button>
-      <button onClick={() => props.setEditing(false)}>Cancel</button>
+      <button onClick={() => setEditing(false)}>Cancel</button>
     </form>
   )
+}
+
+EditTargetForm.propTypes = {
+  currentCompany: PropTypes.string.isRequired,
+  updateTarget: PropTypes.func.isRequired,
+  setEditing: PropTypes.func.isRequired
 }
 
 export default EditTargetForm

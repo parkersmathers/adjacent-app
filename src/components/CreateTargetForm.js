@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
+import PropTypes from 'prop-types'
 import './TargetForm.css'
 
-const CreateTargetForm = props => {
+const CreateTargetForm = ({ createTarget, setCreating }) => {
   const initialFormState = {
     companyId: null,
     companyName: '',
@@ -32,9 +33,9 @@ const CreateTargetForm = props => {
         event.preventDefault()
         if (!company.companyName) return
 
-        props.createTarget(company)
+        createTarget(company)
         setCompany(initialFormState)
-        props.setCreating(false)
+        setCreating(false)
       }}>
       <section>
         <h2>Create Company</h2>
@@ -175,9 +176,14 @@ const CreateTargetForm = props => {
       </section>
 
       <button type='submit'>Track</button>
-      <button onClick={() => props.setCreating(false)}>Cancel</button>
+      <button onClick={() => setCreating(false)}>Cancel</button>
     </form>
   )
+}
+
+CreateTargetForm.propTypes = {
+  createTarget: PropTypes.func.isRequired,
+  setCreating: PropTypes.func.isRequired
 }
 
 export default CreateTargetForm

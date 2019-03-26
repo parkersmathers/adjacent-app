@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 const TargetListItem = ({ company, deleteTarget, editTarget }) => {
   return (
@@ -28,6 +29,12 @@ const TargetListItem = ({ company, deleteTarget, editTarget }) => {
       </div>
     </li>
   )
+}
+
+TargetListItem.propTypes = {
+  company: PropTypes.array.isRequired, 
+  deleteTarget: PropTypes.func.isRequired, 
+  editTarget: PropTypes.func.isRequired
 }
 
 export default TargetListItem
