@@ -20,7 +20,8 @@ const App = () => {
     contactEmail: '',
     companyMarket: '',
     companySize: '',
-    companyFunding: ''
+    companyFunding: '',
+    companyTrackingStatus: ''
   }
 
   const [companies, setCompanies] = useState(companiesData)
@@ -53,7 +54,8 @@ const App = () => {
       contactEmail: company.contactEmail,
       companyMarket: company.companyMarket,
       companySize: company.companySize,
-      companyFunding: company.companyFunding
+      companyFunding: company.companyFunding,
+      companyTrackingStatus: company.companyTrackingStatus
     })
   }
 

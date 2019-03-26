@@ -110,6 +110,51 @@ const EditTargetForm = props => {
         />
       </section>
 
+      {/**** FIXME: onChange handlers for radio buttons ****/}
+      <section>
+        <h2>Status</h2>
+        <p>
+          <input
+            type='radio'
+            name='status'
+            value='researching'
+            onChange={handleInputChange}
+            checked={company.companyTrackingStatus === 'researching'}
+          />
+          <label>Researching</label>
+        </p>
+        <p>
+          <input
+            type='radio'
+            name='status'
+            value='pending approval'
+            onChange={handleInputChange}
+            checked={company.companyTrackingStatus === 'pending approval'}
+          />
+          <label>Pending Approval</label>
+        </p>
+        <p>
+          <input
+            type='radio'
+            name='status'
+            value='approved'
+            onChange={handleInputChange}
+            checked={company.companyTrackingStatus === 'approved'}
+          />
+          <label>Approved</label>
+        </p>
+        <p>
+          <input
+            type='radio'
+            name='status'
+            value='declined'
+            onChange={handleInputChange}
+            checked={company.companyTrackingStatus === 'declined'}
+          />
+          <label>Declined</label>
+        </p>
+      </section>
+
       <button type='submit'>Update</button>
       <button onClick={() => props.setEditing(false)}>Cancel</button>
     </form>

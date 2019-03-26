@@ -24,10 +24,7 @@ const TargetListItem = ({ company, deleteTarget, editTarget }) => {
         <button onClick={() => deleteTarget(company.companyId)}>Delete</button>
       </div>
       <div>
-        <button>Researching</button>
-        <button>Pending Approval</button>
-        <button>Approved</button>
-        <button>Declined</button>
+        <p>Status: {company.companyTrackingStatus}</p>
       </div>
     </li>
   )

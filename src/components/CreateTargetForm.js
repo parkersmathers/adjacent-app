@@ -17,11 +17,13 @@ const CreateTargetForm = props => {
   }
 
   const [company, setCompany] = useState(initialFormState)
+  // const [status, setStatus] = useState(false)
 
   const handleInputChange = event => {
+    console.log(event)
     const { name, value } = event.target
 
-    setCompany({...company, [name]: value})
+    setCompany({ ...company, [name]: value })
   }
 
   return (
@@ -33,8 +35,7 @@ const CreateTargetForm = props => {
         props.createTarget(company)
         setCompany(initialFormState)
         props.setCreating(false)
-      }}
-    >
+      }}>
       <section>
         <h2>Create Company</h2>
         <label>Name*:</label>
@@ -110,10 +111,10 @@ const CreateTargetForm = props => {
           value={company.companyMarket}
           onChange={handleInputChange}
         />
-        <label>Job Title:</label>
+        <label>Employees:</label>
         <input
           type='text'
-          name='companyEmployees'
+          name='companySize'
           placeholder='Number of employees'
           value={company.companySize}
           onChange={handleInputChange}
@@ -126,6 +127,51 @@ const CreateTargetForm = props => {
           value={company.companyFunding}
           onChange={handleInputChange}
         />
+      </section>
+
+      {/**** FIXME: onChange handlers for radio buttons ****/}
+      <section>
+        <h2>Status</h2>
+        <p>
+          <input
+            type='radio'
+            name='status'
+            value='researching'
+            onChange={handleInputChange}
+            checked={company.companyTrackingStatus === 'researching'}
+          />
+          <label>Researching</label>
+        </p>
+        <p>
+          <input
+            type='radio'
+            name='status'
+            value='pending approval'
+            onChange={handleInputChange}
+            checked={company.companyTrackingStatus === 'pending approval'}
+          />
+          <label>Pending Approval</label>
+        </p>
+        <p>
+          <input
+            type='radio'
+            name='status'
+            value='approved'
+            onChange={handleInputChange}
+            checked={company.companyTrackingStatus === 'approved'}
+          />
+          <label>Approved</label>
+        </p>
+        <p>
+          <input
+            type='radio'
+            name='status'
+            value='declined'
+            onChange={handleInputChange}
+            checked={company.companyTrackingStatus === 'declined'}
+          />
+          <label>Declined</label>
+        </p>
       </section>
 
       <button type='submit'>Track</button>
