@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import './TargetForm.css'
 
-const TargetForm = props => {
+const CreateTargetForm = props => {
   const initialFormState = {
     companyId: null,
     companyName: '',
@@ -35,7 +35,7 @@ const TargetForm = props => {
       }}
     >
       <section>
-        <h2>Company</h2>
+        <h2>Create Company</h2>
         <label>Name*:</label>
         <input
           type='text'
@@ -132,4 +132,4 @@ const TargetForm = props => {
   )
 }
 
-export default TargetForm
+export default CreateTargetForm
