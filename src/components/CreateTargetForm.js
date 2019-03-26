@@ -32,6 +32,7 @@ const CreateTargetForm = props => {
 
         props.createTarget(company)
         setCompany(initialFormState)
+        props.setCreating(false)
       }}
     >
       <section>
@@ -119,7 +120,7 @@ const CreateTargetForm = props => {
         />
         <label>Funding:</label>
         <input
-          type='number'
+          type='string'
           name='companyFunding'
           placeholder='Total funding'
           value={company.companyFunding}
@@ -128,6 +129,7 @@ const CreateTargetForm = props => {
       </section>
 
       <button type='submit'>Track</button>
+      <button onClick={() => props.setCreating(false)}>Cancel</button>
     </form>
   )
 }

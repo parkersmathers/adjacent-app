@@ -102,7 +102,7 @@ const EditTargetForm = props => {
         />
         <label>Funding:</label>
         <input
-          type='number'
+          type='string'
           name='companyFunding'
           placeholder='Total funding'
           value={company.companyFunding}

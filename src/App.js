@@ -24,11 +24,14 @@ const App = () => {
   }
 
   const [companies, setCompanies] = useState(companiesData)
+  const [creating, setCreating] = useState(false)
   const [editing, setEditing] = useState(false)
   const [currentCompany, setCurrentCompany] = useState(initialFormState)
 
   const createTarget = company => {
+    setCreating(true)
     company.companyId = faker.random.uuid()
+
     setCompanies([...companies, company])
   }
 
@@ -69,23 +72,33 @@ const App = () => {
       <header className='App-header'>
         <h1>AdjacenT</h1>
         <h4>Track and analyze your potential target companies.</h4>
+        {creating === false && editing === false && (
+          <button onClick={() => setCreating(true)}>New</button>
+        )}
       </header>
       <main>
-        <TargetList
-          companies={companies}
-          deleteTarget={deleteTarget}
-          editTarget={editTarget}
-        />
+        {creating === false && editing === false && (
+          <TargetList
+            companies={companies}
+            deleteTarget={deleteTarget}
+            editTarget={editTarget}
+          />
+        )}
         <>
-          {editing ? (
+          {editing && (
             <EditTargetForm
               editing={editing}
               setEditing={setEditing}
               currentCompany={currentCompany}
               updateTarget={updateTarget}
             />
-          ) : (
-            <CreateTargetForm createTarget={createTarget} />
+          )}
+          {creating && (
+            <CreateTargetForm
+              createTarget={createTarget}
+              creating={creating}
+              setCreating={setCreating}
+            />
           )}
         </>
       </main>

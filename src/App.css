@@ -19,6 +19,12 @@
   border-bottom: 3px solid rgba(46, 139, 87, 0.2);
 }
 
+.App-header button {
+  padding: 15px 20px;
+  border-radius: 5px;
+  border: 3px solid rgba(46, 139, 87, 0.2);
+}
+
 .App-footer {
   margin-bottom: 30px;
   border-top: 3px solid rgba(46, 139, 87, 0.2);
