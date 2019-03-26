@@ -15,9 +15,9 @@ const App = () => {
     setCompanies([...companies, company])
   }
 
-  // const deleteTarget = id => {
-  //   setCompanies(companies.filter(company => company.companyId !== id))
-  // }
+  const deleteTarget = id => {
+    setCompanies(companies.filter(company => company.companyId !== id))
+  }
 
   return (
     <div className='App'>
@@ -26,7 +26,7 @@ const App = () => {
         <h4>Track and analyze your potential target companies.</h4>
       </header>
       <main>
-        <TargetList companies={companies} />
+        <TargetList companies={companies} deleteTarget={deleteTarget} />
         <TargetForm createTarget={createTarget} />
       </main>
       <div className='App-footer' />

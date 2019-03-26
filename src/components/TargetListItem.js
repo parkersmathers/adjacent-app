@@ -1,6 +1,6 @@
 import React from 'react'
 
-const TargetListItem = ({ company }) => {
+const TargetListItem = ({ company, deleteTarget }) => {
   return (
     <li>
       <div>
@@ -21,7 +21,7 @@ const TargetListItem = ({ company }) => {
       </div>
       <div>
         <button>Edit</button>
-        <button>Delete</button>
+        <button onClick={() => deleteTarget(company.companyId)}>Delete</button>
       </div>
       <div>
         <button>Researching</button>

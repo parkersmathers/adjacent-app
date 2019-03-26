@@ -1,7 +1,7 @@
 import React from 'react'
 import TargetListItem from './TargetListItem'
 
-const TargetList = ({ companies }) => {
+const TargetList = ({ companies, deleteTarget }) => {
   return (
     <section>
       <header>
@@ -9,7 +9,7 @@ const TargetList = ({ companies }) => {
       </header>
       <ul>
         {companies.map(company => (
-          <TargetListItem key={company.companyId} company={company} />
+          <TargetListItem key={company.companyId} company={company} deleteTarget={deleteTarget} />
         ))}
       </ul>
     </section>
