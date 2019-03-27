@@ -1,10 +1,12 @@
 import React, { useState } from 'react'
 import CreateTargetForm from './components/CreateTargetForm'
 import EditTargetForm from './components/EditTargetForm'
+import Header from './components/Header'
 import TargetList from './components/TargetList'
 import { getData } from './mockData'
 import faker from 'faker'
 import './App.css'
+import { Button } from 'rebass'
 
 const App = () => {
   const companiesData = getData()
@@ -71,14 +73,20 @@ const App = () => {
 
   return (
     <div className='App'>
-      <header className='App-header'>
-        <h1>AdjacenT</h1>
-        <h4>Track and analyze your potential target companies.</h4>
-        {creating === false && editing === false && (
-          <button onClick={() => setCreating(true)}>New</button>
-        )}
-      </header>
+      <Header />
       <main>
+        {creating === false && editing === false && (
+          <Button
+            onClick={() => setCreating(true)}
+            p={5}
+            fontWeight={1}
+            bg='white'
+            border='3px solid rgba(46, 139, 87, 0.2)'
+            color='seagreen'
+            fontSize={[3, 4]}>
+            New
+          </Button>
+        )}
         {creating === false && editing === false && (
           <TargetList
             companies={companies}
