@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
-// import './TargetForm.css'
 import Form from './StyledForm'
 
 const CreateTargetForm = ({ createTarget, setCreating }) => {
