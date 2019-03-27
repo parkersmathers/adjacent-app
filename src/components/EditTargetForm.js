@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
-import './TargetForm.css'
+import Form from './StyledForm'
 
 const EditTargetForm = ({currentCompany, updateTarget, setEditing}) => {
   const [company, setCompany] = useState(currentCompany)
@@ -12,7 +12,7 @@ const EditTargetForm = ({currentCompany, updateTarget, setEditing}) => {
   }
 
   return (
-    <form
+    <Form
       onSubmit={event => {
         event.preventDefault()
         updateTarget(company.companyId, company)
@@ -158,7 +158,7 @@ const EditTargetForm = ({currentCompany, updateTarget, setEditing}) => {
 
       <button type='submit'>Update</button>
       <button onClick={() => setEditing(false)}>Cancel</button>
-    </form>
+    </Form>
   )
 }
 

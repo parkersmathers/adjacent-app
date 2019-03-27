@@ -1,50 +1,56 @@
-form {
+import styled from 'styled-components'
+
+const StyledForm = styled.form`
   max-width: 550px;
   padding: 30px 75px;
   margin: 0 auto;
   background-color: rgb(255, 248, 250);
-}
+  border-left: 1px solid lightblue;
+  border-right: 1px solid lightblue;
 
-form section h2 {
+section h2 {
   border-bottom: 1px solid lightgray;
   margin: 5px 0;
 }
 
-form label {
+label {
   font-weight: 100px;
   margin: 18px 0 8px;
   text-align: left;
   padding-left: 8px;
 }
 
-form input {
+input {
   padding: 12px 8px;
   font-size: calc(10px + .8vmin);
   border: none;
 }
 
-form input::placeholder {
+input::placeholder {
   color: lightgray;
 }
 
-form input:last-child,
-form p:last-child {
+input:last-child,
+p:last-child {
   margin-bottom: 40px;
 }
 
-form button {
+button {
   font-size: calc(10px + 1vmin);
   background-color: ghostwhite;
   border-radius: 5px;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.10);
-  color: gray;
+  color: midnightblue;
   padding: 10px;
-  margin: 0 -5px 40px;
+  margin-bottom: 20px;
   width: 100%;
 }
 
-form p {
+p {
   background-color: #fff;
   text-align: left;
   padding-left: 8px;
 }
+`
+
+export default StyledForm
