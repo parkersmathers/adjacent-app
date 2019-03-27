@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import TargetListItem from './TargetListItem'
+import ListItem from './ListItem'
 import { Box } from 'rebass'
 
 const List = ({ companies, deleteTarget, editTarget }) => {
@@ -9,7 +9,7 @@ const List = ({ companies, deleteTarget, editTarget }) => {
       <Box mt='50px' />
       <ul>
         {companies.map(company => (
-          <TargetListItem
+          <ListItem
             key={company.companyId}
             company={company}
             deleteTarget={deleteTarget}

@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const TargetListItem = ({ company, deleteTarget, editTarget }) => {
+const ListItem = ({ company, deleteTarget, editTarget }) => {
   return (
     <li>
       <div>
@@ -31,10 +31,10 @@ const TargetListItem = ({ company, deleteTarget, editTarget }) => {
   )
 }
 
-TargetListItem.propTypes = {
+ListItem.propTypes = {
   company: PropTypes.array.isRequired, 
   deleteTarget: PropTypes.func.isRequired, 
   editTarget: PropTypes.func.isRequired
 }
 
-export default TargetListItem
+export default ListItem
