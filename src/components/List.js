@@ -1,13 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import TargetListItem from './TargetListItem'
+import { Box } from 'rebass'
 
-const TargetList = ({ companies, deleteTarget, editTarget }) => {
+const List = ({ companies, deleteTarget, editTarget }) => {
   return (
     <section>
-      <header>
-        <h2>Companies</h2>
-      </header>
+      <Box mt='50px' />
       <ul>
         {companies.map(company => (
           <TargetListItem
@@ -22,10 +21,10 @@ const TargetList = ({ companies, deleteTarget, editTarget }) => {
   )
 }
 
-TargetList.propTypes = {
+List.propTypes = {
   companies: PropTypes.array.isRequired,
   deleTarget: PropTypes.func.isRequired,
   editTarget: PropTypes.func.isRequired
 }
 
-export default TargetList
+export default List

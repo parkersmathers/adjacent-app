@@ -46,7 +46,7 @@ section {
   border-left: 1px solid rgba(46, 139, 87, 0.7);
 }
 
-section header {
+/* section header {
   width: 100%;
   text-align: left;
 }
@@ -55,7 +55,7 @@ section header h2 {
   margin: 50px 0 0;
   padding: 0 10px;
   display: inline-block;
-}
+} */
 
 section > a {
   text-align: right;

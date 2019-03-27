@@ -3,7 +3,7 @@ import CreateTargetForm from './components/CreateTargetForm'
 import EditTargetForm from './components/EditTargetForm'
 import Header from './components/Header'
 import ListHeader from './components/ListHeader'
-import TargetList from './components/TargetList'
+import List from './components/List'
 import { getData } from './mockData'
 import faker from 'faker'
 import './App.css'
@@ -80,7 +80,7 @@ const App = () => {
           <ListHeader setCreating={setCreating} />
         )}
         {creating === false && editing === false && (
-          <TargetList
+          <List
             companies={companies}
             deleteTarget={deleteTarget}
             editTarget={editTarget}
