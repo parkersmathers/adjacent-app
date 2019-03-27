@@ -9,7 +9,6 @@
 
 /* .App-header,
 .App-footer {
-  font-size: calc(8px + 2vmin);
   line-height: 55px;
   height: 55px;
 }
@@ -33,11 +32,11 @@
   margin-right: -7px;
 } */
 
-main > .button {
+/* main > .button {
   padding: 15px 20px;
   border-radius: 5px;
   border: 3px solid rgba(46, 139, 87, 0.2);
-}
+} */
 
 section {
   display: flex;
@@ -102,6 +101,6 @@ div:first-child>p:first-child {
   font-weight: 400;
 }
 
-button {
+/* button {
   margin: 5px;
-}
+} */

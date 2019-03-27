@@ -2,11 +2,12 @@ import React, { useState } from 'react'
 import CreateTargetForm from './components/CreateTargetForm'
 import EditTargetForm from './components/EditTargetForm'
 import Header from './components/Header'
+import ListHeader from './components/ListHeader'
 import TargetList from './components/TargetList'
 import { getData } from './mockData'
 import faker from 'faker'
 import './App.css'
-import { Button } from 'rebass'
+import { Flex, Box, Button } from 'rebass'
 
 const App = () => {
   const companiesData = getData()
@@ -72,20 +73,11 @@ const App = () => {
   }
 
   return (
-    <div className='App'>
+    <Flex flexDirection='column'>
       <Header />
       <main>
         {creating === false && editing === false && (
-          <Button
-            onClick={() => setCreating(true)}
-            p={5}
-            fontWeight={1}
-            bg='white'
-            border='3px solid rgba(46, 139, 87, 0.2)'
-            color='seagreen'
-            fontSize={[3, 4]}>
-            New
-          </Button>
+          <ListHeader setCreating={setCreating} />
         )}
         {creating === false && editing === false && (
           <TargetList
@@ -113,7 +105,7 @@ const App = () => {
         </>
       </main>
       <div className='App-footer' />
-    </div>
+    </Flex>
   )
 }
 
