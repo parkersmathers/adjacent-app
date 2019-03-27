@@ -1,5 +1,6 @@
 import React from 'react'
-import styled, { css } from 'styled-components'
+import PropTypes from 'prop-types'
+import styled from 'styled-components'
 import { Flex, Box } from 'rebass'
 
 const Button = styled.button`
@@ -17,5 +18,9 @@ const ListHeader = ({ setCreating }) => (
     <Button onClick={() => setCreating(true)}>New</Button>
   </Flex>
 )
+
+ListHeader.propTypes = {
+  setCreating: PropTypes.bool.isRequired
+}
 
 export default ListHeader
