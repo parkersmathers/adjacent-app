@@ -7,7 +7,7 @@ import List from './components/List'
 import { getData } from './mockData'
 import faker from 'faker'
 import './App.css'
-import { Flex, Box, Button } from 'rebass'
+import { Flex } from 'rebass'
 
 const App = () => {
   const companiesData = getData()
@@ -27,10 +27,14 @@ const App = () => {
     companyTrackingStatus: ''
   }
 
+  // Use React State Hooks to manage state
+
   const [companies, setCompanies] = useState(companiesData)
   const [creating, setCreating] = useState(false)
   const [editing, setEditing] = useState(false)
   const [currentCompany, setCurrentCompany] = useState(initialFormState)
+
+  // Create, delete, edit, and update list items
 
   const createTarget = company => {
     setCreating(true)

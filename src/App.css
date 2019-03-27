@@ -7,37 +7,6 @@
   text-align: center;
 }
 
-/* .App-header,
-.App-footer {
-  line-height: 55px;
-  height: 55px;
-}
-
-.App-header {
-  margin-top: 15px;
-  border-bottom: 3px solid rgba(46, 139, 87, 0.2);
-}
-.App-footer {
-  margin-bottom: 30px;
-  border-top: 3px solid rgba(46, 139, 87, 0.2);
-}
-
-.App-header h1,
-.App-header h4 {
-  display: inline;
-}
-
-.App-header h1 {
-  border-left: 1px solid gold;
-  margin-right: -7px;
-} */
-
-/* main > .button {
-  padding: 15px 20px;
-  border-radius: 5px;
-  border: 3px solid rgba(46, 139, 87, 0.2);
-} */
-
 section {
   display: flex;
   flex-direction: column;
@@ -45,17 +14,6 @@ section {
   margin: -8px auto 0;
   border-left: 1px solid rgba(46, 139, 87, 0.7);
 }
-
-/* section header {
-  width: 100%;
-  text-align: left;
-}
-
-section header h2 {
-  margin: 50px 0 0;
-  padding: 0 10px;
-  display: inline-block;
-} */
 
 section > a {
   text-align: right;
@@ -74,25 +32,19 @@ ul {
   text-align: left;
 }
 
-/* li {
-  display: block;
-  border-top: 1px solid red;
-  background: lightcyan;
-  margin-bottom: 20px;
-} */
-
 li div {
   padding: 10px;
   background-color: #fff;
+}
+
+li > div {
+  border: 1px solid #f6f6ff;
 }
 
 li,
 li > div > div {
   border-right: 1px dashed black;
   border-bottom: 1px solid black;
-  /* display: inline-block;
-  width: 33.3333%; */
-  /* vertical-align: top; */
 }
 
 li div p {
@@ -104,7 +56,3 @@ div:first-child>p:first-child {
   font-size: calc(10px + 1vmin);
   font-weight: 400;
 }
-
-/* button {
-  margin: 5px;
-} */

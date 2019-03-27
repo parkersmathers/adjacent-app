@@ -5,18 +5,20 @@ import { Flex, Box } from 'rebass'
 
 const Button = styled.button`
   border: 3px solid rgba(46, 139, 87, 0.2);
-  padding: 15px 20px;
+  padding: 10px 20px;
   border-radius: 5px;
   font-size: 18px;
   font-weight: 200;
 `
 
 const ListHeader = ({ setCreating }) => (
-  <Flex>
-    <h2>Companies</h2>
-    <Box mx='auto' />
-    <Button onClick={() => setCreating(true)}>New</Button>
-  </Flex>
+  <Box mx={4}>
+    <Flex>
+      <h2>Companies</h2>
+      <Box mx='auto' />
+      <Button onClick={() => setCreating(true)}>New</Button>
+    </Flex>
+  </Box>
 )
 
 ListHeader.propTypes = {

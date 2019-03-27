@@ -16,11 +16,9 @@ code {
 
 h2,
 h4,
-h5,
 p,
-a,
-div {
-  font-weight: 100;
+a {
+  font-weight: 200;
 }
 
 a,
