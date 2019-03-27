@@ -6,7 +6,7 @@ import { Box } from 'rebass'
 const List = ({ companies, deleteTarget, editTarget }) => {
   return (
     <section>
-      <Box mt='50px' />
+      <Box mt='50px'/>
       <ul>
         {companies.map(company => (
           <ListItem

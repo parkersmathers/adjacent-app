@@ -74,21 +74,25 @@ ul {
   text-align: left;
 }
 
-li {
+/* li {
   display: block;
   border-top: 1px solid red;
   background: lightcyan;
   margin-bottom: 20px;
-}
+} */
 
 li div {
-  border-right: 1px dashed black;
-  border-bottom: 1px solid black;
   padding: 10px;
   background-color: #fff;
-  display: inline-block;
-  width: 33.3333%;
-  vertical-align: top;
+}
+
+li,
+li > div > div {
+  border-right: 1px dashed black;
+  border-bottom: 1px solid black;
+  /* display: inline-block;
+  width: 33.3333%; */
+  /* vertical-align: top; */
 }
 
 li div p {
