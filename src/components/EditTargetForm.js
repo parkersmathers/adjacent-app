@@ -96,14 +96,14 @@ const EditTargetForm = ({currentCompany, updateTarget, setEditing}) => {
         <label>Job Title:</label>
         <input
           type='text'
-          name='companyEmployees'
+          name='companySize'
           placeholder='Number of employees'
           value={company.companySize}
           onChange={handleInputChange}
         />
         <label>Funding:</label>
         <input
-          type='string'
+          type='text'
           name='companyFunding'
           placeholder='Total funding'
           value={company.companyFunding}
@@ -111,13 +111,12 @@ const EditTargetForm = ({currentCompany, updateTarget, setEditing}) => {
         />
       </section>
 
-      {/**** FIXME: onChange handlers for radio buttons ****/}
       <section>
         <h2>Status</h2>
         <p>
           <input
             type='radio'
-            name='status'
+            name='companyTrackingStatus'
             value='researching'
             onChange={handleInputChange}
             checked={company.companyTrackingStatus === 'researching'}
@@ -127,7 +126,7 @@ const EditTargetForm = ({currentCompany, updateTarget, setEditing}) => {
         <p>
           <input
             type='radio'
-            name='status'
+            name='companyTrackingStatus'
             value='pending approval'
             onChange={handleInputChange}
             checked={company.companyTrackingStatus === 'pending approval'}
@@ -137,7 +136,7 @@ const EditTargetForm = ({currentCompany, updateTarget, setEditing}) => {
         <p>
           <input
             type='radio'
-            name='status'
+            name='companyTrackingStatus'
             value='approved'
             onChange={handleInputChange}
             checked={company.companyTrackingStatus === 'approved'}
@@ -147,7 +146,7 @@ const EditTargetForm = ({currentCompany, updateTarget, setEditing}) => {
         <p>
           <input
             type='radio'
-            name='status'
+            name='companyTrackingStatus'
             value='declined'
             onChange={handleInputChange}
             checked={company.companyTrackingStatus === 'declined'}
@@ -156,7 +155,7 @@ const EditTargetForm = ({currentCompany, updateTarget, setEditing}) => {
         </p>
       </section>
 
-      <button type='submit'>Update</button>
+      <button type='submit'>Save</button>
       <button onClick={() => setEditing(false)}>Cancel</button>
     </Form>
   )

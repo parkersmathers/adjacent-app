@@ -14,7 +14,8 @@ const CreateTargetForm = ({ createTarget, setCreating }) => {
     contactEmail: '',
     companyMarket: '',
     companySize: '',
-    companyFunding: ''
+    companyFunding: '',
+    companyTrackingStatus: false
   }
 
   const [company, setCompany] = useState(initialFormState)
@@ -120,7 +121,7 @@ const CreateTargetForm = ({ createTarget, setCreating }) => {
           />
         <label>Funding:</label>
         <input
-          type='string'
+          type='text'
           name='companyFunding'
           placeholder='Total funding'
           value={company.companyFunding}
@@ -128,13 +129,12 @@ const CreateTargetForm = ({ createTarget, setCreating }) => {
           />
       </section>
 
-      {/**** FIXME: onChange handlers for radio buttons ****/}
       <section>
         <h2>Status</h2>
         <p>
           <input
             type='radio'
-            name='status'
+            name='companyTrackingStatus'
             value='researching'
             onChange={handleInputChange}
             checked={company.companyTrackingStatus === 'researching'}
@@ -144,7 +144,7 @@ const CreateTargetForm = ({ createTarget, setCreating }) => {
         <p>
           <input
             type='radio'
-            name='status'
+            name='companyTrackingStatus'
             value='pending approval'
             onChange={handleInputChange}
             checked={company.companyTrackingStatus === 'pending approval'}
@@ -154,7 +154,7 @@ const CreateTargetForm = ({ createTarget, setCreating }) => {
         <p>
           <input
             type='radio'
-            name='status'
+            name='companyTrackingStatus'
             value='approved'
             onChange={handleInputChange}
             checked={company.companyTrackingStatus === 'approved'}
@@ -164,7 +164,7 @@ const CreateTargetForm = ({ createTarget, setCreating }) => {
         <p>
           <input
             type='radio'
-            name='status'
+            name='companyTrackingStatus'
             value='declined'
             onChange={handleInputChange}
             checked={company.companyTrackingStatus === 'declined'}

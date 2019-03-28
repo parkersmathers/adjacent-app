@@ -24,7 +24,7 @@ const App = () => {
     companyMarket: '',
     companySize: '',
     companyFunding: '',
-    companyTrackingStatus: ''
+    companyTrackingStatus: false
   }
 
   // Use React State Hooks to manage state
