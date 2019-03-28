@@ -77,7 +77,7 @@ const CreateTargetForm = ({ createTarget, setCreating }) => {
         <label>Job Title:</label>
         <input
           type='text'
-          name='contactJobtitle'
+          name='contactJobTitle'
           placeholder='Contact job title'
           value={company.contactJobTitle}
           onChange={handleInputChange}
