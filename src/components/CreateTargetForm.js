@@ -181,7 +181,7 @@ const CreateTargetForm = ({ createTarget, setCreating }) => {
 
 CreateTargetForm.propTypes = {
   createTarget: PropTypes.func.isRequired,
-  setCreating: PropTypes.bool.isRequired
+  setCreating: PropTypes.func.isRequired
 }
 
 export default CreateTargetForm

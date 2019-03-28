@@ -8,7 +8,7 @@ const List = ({ companies, deleteTarget, editTarget }) => {
     <section>
       <Box mt='50px'/>
       <ul>
-        {companies.map(company => (
+        {companies && companies.map(company => (
           <ListItem
             key={company.companyId}
             company={company}
@@ -23,7 +23,7 @@ const List = ({ companies, deleteTarget, editTarget }) => {
 
 List.propTypes = {
   companies: PropTypes.array.isRequired,
-  deleTarget: PropTypes.func.isRequired,
+  deleteTarget: PropTypes.func.isRequired,
   editTarget: PropTypes.func.isRequired
 }
 

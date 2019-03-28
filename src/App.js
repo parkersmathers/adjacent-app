@@ -83,7 +83,7 @@ const App = () => {
         {creating === false && editing === false && (
           <ListHeader setCreating={setCreating} />
         )}
-        {creating === false && editing === false && (
+        {companies && creating === false && editing === false && (
           <List
             companies={companies}
             deleteTarget={deleteTarget}

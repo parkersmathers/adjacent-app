@@ -63,7 +63,20 @@ const ListItem = ({ company, deleteTarget, editTarget }) => {
 }
 
 ListItem.propTypes = {
-  company: PropTypes.array.isRequired,
+  company: PropTypes.shape({
+    companyId: PropTypes.string.isRequired,
+    companyName: PropTypes.string.isRequired,
+    companyLocation: PropTypes.string,
+    companyWebsite: PropTypes.string,
+    contactName: PropTypes.string,
+    contactJobTitle: PropTypes.string,
+    contactPhone: PropTypes.string,
+    contactEmail: PropTypes.string,
+    companyMarket: PropTypes.string,
+    companySize: PropTypes.string,
+    companyFunding: PropTypes.string,
+    companyTrackingStatus: PropTypes.string
+  }).isRequired,
   deleteTarget: PropTypes.func.isRequired,
   editTarget: PropTypes.func.isRequired
 }

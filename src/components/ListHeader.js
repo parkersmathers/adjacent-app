@@ -22,7 +22,7 @@ const ListHeader = ({ setCreating }) => (
 )
 
 ListHeader.propTypes = {
-  setCreating: PropTypes.bool.isRequired
+  setCreating: PropTypes.func.isRequired
 }
 
 export default ListHeader
