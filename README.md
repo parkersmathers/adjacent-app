@@ -108,7 +108,7 @@ const handleSubmitForm = event => {
 - [Create React App](https://facebook.github.io/create-react-app/)
 - [React Hooks](https://reactjs.org/docs/hooks-intro.html)
 - [styled-components](https://www.styled-components.com/)
-- [Rebass]([https://link](https://rebassjs.org/))
+- [Rebass](https://rebassjs.org/)
 - [Faker.js](https://github.com/marak/Faker.js/)
 
 ## To Do
