@@ -1,13 +1,17 @@
 import React from 'react'
 // import PropTypes from 'prop-types'
 import useForm from './useForm'
+import validate from './FormValidation'
 import Form from './StyledForm'
 
 const CreateTargetForm = ({ setCreating }) => {
-  const { values, handleInputChange, handleSubmitForm } = useForm(logValues)
+  const { values, errors, handleInputChange, handleSubmitForm } = useForm(
+    message,
+    validate
+  )
 
-  function logValues() {
-    console.log(values)
+  function message() {
+    console.log('Form submitted, no errors')
   }
 
   return (
@@ -22,7 +26,8 @@ const CreateTargetForm = ({ setCreating }) => {
           value={values.companyName || ''}
           onChange={handleInputChange}
           required
-          />
+        />
+        {errors.companyName && <p>{errors.companyName}</p>}
         <label>Location:</label>
         <input
           type='text'
@@ -30,7 +35,7 @@ const CreateTargetForm = ({ setCreating }) => {
           placeholder='City'
           value={values.companyLocation || ''}
           onChange={handleInputChange}
-          />
+        />
         <label>Website:</label>
         <input
           type='text'
@@ -38,7 +43,7 @@ const CreateTargetForm = ({ setCreating }) => {
           placeholder='Company website'
           value={values.companyWebsite || ''}
           onChange={handleInputChange}
-          />
+        />
       </section>
 
       <section>
@@ -50,7 +55,7 @@ const CreateTargetForm = ({ setCreating }) => {
           placeholder='Contact name'
           value={values.contactName || ''}
           onChange={handleInputChange}
-          />
+        />
         <label>Job Title:</label>
         <input
           type='text'
@@ -58,7 +63,7 @@ const CreateTargetForm = ({ setCreating }) => {
           placeholder='Contact job title'
           value={values.contactJobTitle || ''}
           onChange={handleInputChange}
-          />
+        />
         <label>Phone:</label>
         <input
           type='tel'
@@ -66,7 +71,8 @@ const CreateTargetForm = ({ setCreating }) => {
           placeholder='Contact phone'
           value={values.contactPhone || ''}
           onChange={handleInputChange}
-          />
+        />
+        {errors.contactPhone && <p>{errors.contactPhone}</p>}
         <label>Email:</label>
         <input
           type='email'
@@ -74,7 +80,8 @@ const CreateTargetForm = ({ setCreating }) => {
           placeholder='Contact email'
           value={values.contactEmail || ''}
           onChange={handleInputChange}
-          />
+        />
+        {errors.contactEmail && <p>{errors.contactEmail}</p>}
       </section>
 
       <section>
@@ -86,7 +93,7 @@ const CreateTargetForm = ({ setCreating }) => {
           placeholder='Market'
           value={values.companyMarket || ''}
           onChange={handleInputChange}
-          />
+        />
         <label>Employees:</label>
         <input
           type='text'
@@ -94,7 +101,7 @@ const CreateTargetForm = ({ setCreating }) => {
           placeholder='Number of employees'
           value={values.companySize || ''}
           onChange={handleInputChange}
-          />
+        />
         <label>Funding:</label>
         <input
           type='text'
@@ -102,7 +109,7 @@ const CreateTargetForm = ({ setCreating }) => {
           placeholder='Total funding'
           value={values.companyFunding || ''}
           onChange={handleInputChange}
-          />
+        />
       </section>
 
       <section>
@@ -114,7 +121,7 @@ const CreateTargetForm = ({ setCreating }) => {
             value='researching'
             onChange={handleInputChange}
             checked={values.companyTrackingStatus === 'researching'}
-            />
+          />
           <label>Researching</label>
         </p>
         <p>

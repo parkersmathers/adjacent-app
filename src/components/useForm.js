@@ -1,7 +1,19 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
-const useForm = callback => {
+const useForm = (callback, validate) => {
   const [values, setValues] = useState({})
+  const [errors, setErrors] = useState({})
+  // Prevent form from submitting on render
+  const [isSubmitting, setIsSubmitting] = useState(false)
+
+  // As a 'side effect' of the errors value changing, do this ...
+  useEffect(() => {
+  // ... check if the errors object is empty & isSubmitting ...
+    if (Object.keys(errors).length === 0 && isSubmitting) {
+  // ... and if so, call the callback function.
+      callback()
+    }
+  }, [errors])
 
   const handleInputChange = event => {
     event.persist()
@@ -12,13 +24,15 @@ const useForm = callback => {
 
   const handleSubmitForm = event => {
     if (event) event.preventDefault()
-    callback()
+    setIsSubmitting(true)
+    setErrors(validate(values))
   }
 
   return {
     handleInputChange,
     handleSubmitForm,
-    values
+    values,
+    errors
   }
 }
 
