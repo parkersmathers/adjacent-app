@@ -1,10 +1,10 @@
 import React from 'react'
-// import PropTypes from 'prop-types'
+import PropTypes from 'prop-types'
 import useForm from './useForm'
 import validate from './FormValidation'
 import Form from './StyledForm'
 
-const CreateTargetForm = ({ setCreating }) => {
+const CreateTargetForm = ({ createTarget, setCreating }) => {
   const { values, errors, handleInputChange, handleSubmitForm } = useForm(
     message,
     validate
@@ -12,6 +12,9 @@ const CreateTargetForm = ({ setCreating }) => {
 
   function message() {
     console.log('Form submitted, no errors')
+    console.log(values)
+    createTarget(values)
+    setCreating(false)
   }
 
   return (
@@ -162,9 +165,9 @@ const CreateTargetForm = ({ setCreating }) => {
   )
 }
 
-// CreateTargetForm.propTypes = {
-//   createTarget: PropTypes.func.isRequired,
-//   setCreating: PropTypes.func.isRequired
-// }
+CreateTargetForm.propTypes = {
+  // createTarget: PropTypes.func.isRequired,
+  setCreating: PropTypes.func.isRequired
+}
 
 export default CreateTargetForm
