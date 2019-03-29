@@ -162,7 +162,20 @@ const EditTargetForm = ({currentCompany, updateTarget, setEditing}) => {
 }
 
 EditTargetForm.propTypes = {
-  currentCompany: PropTypes.string.isRequired,
+  currentCompany: PropTypes.shape({
+    companyId: PropTypes.string.isRequired,
+    companyName: PropTypes.string.isRequired,
+    companyLocation: PropTypes.string,
+    companyWebsite: PropTypes.string,
+    contactName: PropTypes.string,
+    contactJobTitle: PropTypes.string,
+    contactPhone: PropTypes.string,
+    contactEmail: PropTypes.string,
+    companyMarket: PropTypes.string,
+    companySize: PropTypes.string,
+    companyFunding: PropTypes.string,
+    companyTrackingStatus: PropTypes.string
+  }).isRequired,
   updateTarget: PropTypes.func.isRequired,
   setEditing: PropTypes.func.isRequired
 }
