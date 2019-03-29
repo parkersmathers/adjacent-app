@@ -1,41 +1,17 @@
-import React, { useState } from 'react'
-import PropTypes from 'prop-types'
+import React from 'react'
+// import PropTypes from 'prop-types'
+import useForm from './useForm'
 import Form from './StyledForm'
 
-const CreateTargetForm = ({ createTarget, setCreating }) => {
-  const initialFormState = {
-    companyId: null,
-    companyName: '',
-    companyLocation: '',
-    companyWebsite: '',
-    contactName: '',
-    contactJobTitle: '',
-    contactPhone: '',
-    contactEmail: '',
-    companyMarket: '',
-    companySize: '',
-    companyFunding: '',
-    companyTrackingStatus: false
-  }
+const CreateTargetForm = ({ setCreating }) => {
+  const { values, handleInputChange, handleSubmitForm } = useForm(logValues)
 
-  const [company, setCompany] = useState(initialFormState)
-
-  const handleInputChange = event => {
-    const { name, value } = event.target
-
-    setCompany({ ...company, [name]: value })
+  function logValues() {
+    console.log(values)
   }
 
   return (
-    <Form
-      onSubmit={event => {
-        event.preventDefault()
-        if (!company.companyName) return
-        
-        createTarget(company)
-        setCompany(initialFormState)
-        setCreating(false)
-      }}>
+    <Form onSubmit={handleSubmitForm}>
       <section>
         <h2>Create Company</h2>
         <label>Name*:</label>
@@ -43,7 +19,7 @@ const CreateTargetForm = ({ createTarget, setCreating }) => {
           type='text'
           name='companyName'
           placeholder='Company name'
-          value={company.companyName}
+          value={values.companyName || ''}
           onChange={handleInputChange}
           required
           />
@@ -52,7 +28,7 @@ const CreateTargetForm = ({ createTarget, setCreating }) => {
           type='text'
           name='companyLocation'
           placeholder='City'
-          value={company.companyLocation}
+          value={values.companyLocation || ''}
           onChange={handleInputChange}
           />
         <label>Website:</label>
@@ -60,7 +36,7 @@ const CreateTargetForm = ({ createTarget, setCreating }) => {
           type='text'
           name='companyWebsite'
           placeholder='Company website'
-          value={company.companyWebsite}
+          value={values.companyWebsite || ''}
           onChange={handleInputChange}
           />
       </section>
@@ -72,7 +48,7 @@ const CreateTargetForm = ({ createTarget, setCreating }) => {
           type='text'
           name='contactName'
           placeholder='Contact name'
-          value={company.contactName}
+          value={values.contactName || ''}
           onChange={handleInputChange}
           />
         <label>Job Title:</label>
@@ -80,7 +56,7 @@ const CreateTargetForm = ({ createTarget, setCreating }) => {
           type='text'
           name='contactJobTitle'
           placeholder='Contact job title'
-          value={company.contactJobTitle}
+          value={values.contactJobTitle || ''}
           onChange={handleInputChange}
           />
         <label>Phone:</label>
@@ -88,7 +64,7 @@ const CreateTargetForm = ({ createTarget, setCreating }) => {
           type='tel'
           name='contactPhone'
           placeholder='Contact phone'
-          value={company.contactPhone}
+          value={values.contactPhone || ''}
           onChange={handleInputChange}
           />
         <label>Email:</label>
@@ -96,7 +72,7 @@ const CreateTargetForm = ({ createTarget, setCreating }) => {
           type='email'
           name='contactEmail'
           placeholder='Contact email'
-          value={company.contactEmail}
+          value={values.contactEmail || ''}
           onChange={handleInputChange}
           />
       </section>
@@ -108,7 +84,7 @@ const CreateTargetForm = ({ createTarget, setCreating }) => {
           type='text'
           name='companyMarket'
           placeholder='Market'
-          value={company.companyMarket}
+          value={values.companyMarket || ''}
           onChange={handleInputChange}
           />
         <label>Employees:</label>
@@ -116,7 +92,7 @@ const CreateTargetForm = ({ createTarget, setCreating }) => {
           type='text'
           name='companySize'
           placeholder='Number of employees'
-          value={company.companySize}
+          value={values.companySize || ''}
           onChange={handleInputChange}
           />
         <label>Funding:</label>
@@ -124,7 +100,7 @@ const CreateTargetForm = ({ createTarget, setCreating }) => {
           type='text'
           name='companyFunding'
           placeholder='Total funding'
-          value={company.companyFunding}
+          value={values.companyFunding || ''}
           onChange={handleInputChange}
           />
       </section>
@@ -137,7 +113,7 @@ const CreateTargetForm = ({ createTarget, setCreating }) => {
             name='companyTrackingStatus'
             value='researching'
             onChange={handleInputChange}
-            checked={company.companyTrackingStatus === 'researching'}
+            checked={values.companyTrackingStatus === 'researching'}
             />
           <label>Researching</label>
         </p>
@@ -147,7 +123,7 @@ const CreateTargetForm = ({ createTarget, setCreating }) => {
             name='companyTrackingStatus'
             value='pending approval'
             onChange={handleInputChange}
-            checked={company.companyTrackingStatus === 'pending approval'}
+            checked={values.companyTrackingStatus === 'pending approval'}
           />
           <label>Pending Approval</label>
         </p>
@@ -157,7 +133,7 @@ const CreateTargetForm = ({ createTarget, setCreating }) => {
             name='companyTrackingStatus'
             value='approved'
             onChange={handleInputChange}
-            checked={company.companyTrackingStatus === 'approved'}
+            checked={values.companyTrackingStatus === 'approved'}
           />
           <label>Approved</label>
         </p>
@@ -167,7 +143,7 @@ const CreateTargetForm = ({ createTarget, setCreating }) => {
             name='companyTrackingStatus'
             value='declined'
             onChange={handleInputChange}
-            checked={company.companyTrackingStatus === 'declined'}
+            checked={values.companyTrackingStatus === 'declined'}
           />
           <label>Declined</label>
         </p>
@@ -179,9 +155,9 @@ const CreateTargetForm = ({ createTarget, setCreating }) => {
   )
 }
 
-CreateTargetForm.propTypes = {
-  createTarget: PropTypes.func.isRequired,
-  setCreating: PropTypes.func.isRequired
-}
+// CreateTargetForm.propTypes = {
+//   createTarget: PropTypes.func.isRequired,
+//   setCreating: PropTypes.func.isRequired
+// }
 
 export default CreateTargetForm
