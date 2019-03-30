@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 
-const useForm = (callback, validate) => {
-  const [values, setValues] = useState({})
+const useForm = (callback, validate, initialFormState) => {
+  const [values, setValues] = useState(initialFormState)
   const [errors, setErrors] = useState({})
   // Prevent form from submitting on render
   const [isSubmitting, setIsSubmitting] = useState(false)

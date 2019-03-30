@@ -1,23 +1,24 @@
-import React, { useState } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
+import useForm from './useForm'
+import validate from './FormValidation'
 import Form from './StyledForm'
 
-const EditTargetForm = ({currentCompany, updateTarget, setEditing}) => {
-  const [company, setCompany] = useState(currentCompany)
+const EditTargetForm = ({ updateTarget, setEditing, currentCompany }) => {
+  const { values, errors, handleInputChange, handleSubmitForm } = useForm(
+    callback,
+    validate,
+    currentCompany
+  )
 
-  const handleInputChange = event => {
-    const { name, value } = event.target
-
-    setCompany({...company, [name]: value})
+  function callback() {
+    console.log('Form submitted, no errors')
+    console.log(values)
+    updateTarget(values.companyId, values)
   }
 
   return (
-    <Form
-      onSubmit={event => {
-        event.preventDefault()
-        updateTarget(company.companyId, company)
-      }}
-    >
+    <Form onSubmit={handleSubmitForm}>
       <section>
         <h2>Edit Company</h2>
         <label>Name*:</label>
@@ -29,6 +30,7 @@ const EditTargetForm = ({currentCompany, updateTarget, setEditing}) => {
           onChange={handleInputChange}
           required
         />
+        {errors.companyName && <p>{errors.companyName}</p>}
         <label>Location:</label>
         <input
           type='text'
@@ -73,6 +75,7 @@ const EditTargetForm = ({currentCompany, updateTarget, setEditing}) => {
           value={company.contactPhone}
           onChange={handleInputChange}
         />
+        {errors.contactPhone && <p>{errors.contactPhone}</p>}
         <label>Email:</label>
         <input
           type='email'
@@ -81,6 +84,7 @@ const EditTargetForm = ({currentCompany, updateTarget, setEditing}) => {
           value={company.contactEmail}
           onChange={handleInputChange}
         />
+        {errors.contactEmail && <p>{errors.contactEmail}</p>}
       </section>
 
       <section>

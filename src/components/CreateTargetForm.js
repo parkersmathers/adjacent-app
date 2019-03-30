@@ -6,11 +6,12 @@ import Form from './StyledForm'
 
 const CreateTargetForm = ({ createTarget, setCreating }) => {
   const { values, errors, handleInputChange, handleSubmitForm } = useForm(
-    message,
-    validate
+    callback,
+    validate,
+    {}
   )
 
-  function message() {
+  function callback() {
     console.log('Form submitted, no errors')
     console.log(values)
     createTarget(values)
@@ -166,7 +167,7 @@ const CreateTargetForm = ({ createTarget, setCreating }) => {
 }
 
 CreateTargetForm.propTypes = {
-  // createTarget: PropTypes.func.isRequired,
+  createTarget: PropTypes.func.isRequired,
   setCreating: PropTypes.func.isRequired
 }
 
