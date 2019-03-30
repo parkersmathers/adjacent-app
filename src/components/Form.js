@@ -2,24 +2,31 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import useForm from './useForm'
 import validate from './FormValidation'
-import Form from './StyledForm'
+import StyledForm from './StyledForm'
 
-const CreateTargetForm = ({ createTarget, setCreating }) => {
+const Form = props => {
+  const currentCompany = props.currentCompany || {}
   const { values, errors, handleInputChange, handleSubmitForm } = useForm(
     callback,
     validate,
-    {}
+    currentCompany
   )
 
   function callback() {
     console.log('Form submitted, no errors')
     console.log(values)
-    createTarget(values)
-    setCreating(false)
+    if (props.setCreating) {
+      props.createTarget(values)
+      props.setCreating(false)
+    } else if (props.setEditing) {
+      props.updateTarget(values.companyId, values)
+    } else {
+      console.log('Oops. No props for creating or editing')
+    }
   }
 
   return (
-    <Form onSubmit={handleSubmitForm}>
+    <StyledForm onSubmit={handleSubmitForm}>
       <section>
         <h2>Create Company</h2>
         <label>Name*:</label>
@@ -160,15 +167,26 @@ const CreateTargetForm = ({ createTarget, setCreating }) => {
         </p>
       </section>
 
-      <button type='submit'>Track</button>
-      <button onClick={() => setCreating(false)}>Cancel</button>
-    </Form>
+      {/* Buttons */}
+      {props.setCreating && (
+        <>
+          <button type='submit'>Track</button>
+          <button onClick={() => props.setCreating(false)}>Cancel</button>
+        </>
+      )} :
+      {props.setEditing && (
+        <>
+          <button type='submit'>Save</button>
+          <button onClick={() => props.setEditing(false)}>Cancel</button>
+        </>
+      )}
+    </StyledForm>
   )
 }
 
-CreateTargetForm.propTypes = {
+Form.propTypes = {
   createTarget: PropTypes.func.isRequired,
   setCreating: PropTypes.func.isRequired
 }
 
-export default CreateTargetForm
+export default Form
