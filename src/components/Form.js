@@ -2,9 +2,10 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import useForm from './useForm'
 import validate from './FormValidation'
-import Form from './StyledForm'
+import StyledForm from './StyledForm'
 
-const EditTargetForm = ({ updateTarget, setEditing, currentCompany }) => {
+const Form = props => {
+  const currentCompany = props.currentCompany || {}
   const { values, errors, handleInputChange, handleSubmitForm } = useForm(
     callback,
     validate,
@@ -14,19 +15,26 @@ const EditTargetForm = ({ updateTarget, setEditing, currentCompany }) => {
   function callback() {
     console.log('Form submitted, no errors')
     console.log(values)
-    updateTarget(values.companyId, values)
+    if (props.setCreating) {
+      props.createTarget(values)
+      props.setCreating(false)
+    } else if (props.setEditing) {
+      props.updateTarget(values.companyId, values)
+    } else {
+      console.log('Oops. No props for creating or editing')
+    }
   }
 
   return (
-    <Form onSubmit={handleSubmitForm}>
+    <StyledForm onSubmit={handleSubmitForm}>
       <section>
-        <h2>Edit Company</h2>
+        <h2>Create Company</h2>
         <label>Name*:</label>
         <input
           type='text'
           name='companyName'
           placeholder='Company name'
-          value={values.companyName}
+          value={values.companyName || ''}
           onChange={handleInputChange}
           required
         />
@@ -36,7 +44,7 @@ const EditTargetForm = ({ updateTarget, setEditing, currentCompany }) => {
           type='text'
           name='companyLocation'
           placeholder='City'
-          value={values.companyLocation}
+          value={values.companyLocation || ''}
           onChange={handleInputChange}
         />
         <label>Website:</label>
@@ -44,7 +52,7 @@ const EditTargetForm = ({ updateTarget, setEditing, currentCompany }) => {
           type='text'
           name='companyWebsite'
           placeholder='Company website'
-          value={values.companyWebsite}
+          value={values.companyWebsite || ''}
           onChange={handleInputChange}
         />
       </section>
@@ -56,15 +64,15 @@ const EditTargetForm = ({ updateTarget, setEditing, currentCompany }) => {
           type='text'
           name='contactName'
           placeholder='Contact name'
-          value={values.contactName}
+          value={values.contactName || ''}
           onChange={handleInputChange}
         />
         <label>Job Title:</label>
         <input
           type='text'
-          name='contactJobtitle'
+          name='contactJobTitle'
           placeholder='Contact job title'
-          value={values.contactJobTitle}
+          value={values.contactJobTitle || ''}
           onChange={handleInputChange}
         />
         <label>Phone:</label>
@@ -72,7 +80,7 @@ const EditTargetForm = ({ updateTarget, setEditing, currentCompany }) => {
           type='tel'
           name='contactPhone'
           placeholder='Contact phone'
-          value={values.contactPhone}
+          value={values.contactPhone || ''}
           onChange={handleInputChange}
         />
         {errors.contactPhone && <p>{errors.contactPhone}</p>}
@@ -81,7 +89,7 @@ const EditTargetForm = ({ updateTarget, setEditing, currentCompany }) => {
           type='email'
           name='contactEmail'
           placeholder='Contact email'
-          value={values.contactEmail}
+          value={values.contactEmail || ''}
           onChange={handleInputChange}
         />
         {errors.contactEmail && <p>{errors.contactEmail}</p>}
@@ -94,15 +102,15 @@ const EditTargetForm = ({ updateTarget, setEditing, currentCompany }) => {
           type='text'
           name='companyMarket'
           placeholder='Market'
-          value={values.companyMarket}
+          value={values.companyMarket || ''}
           onChange={handleInputChange}
         />
-        <label>Job Title:</label>
+        <label>Employees:</label>
         <input
           type='text'
           name='companySize'
           placeholder='Number of employees'
-          value={values.companySize}
+          value={values.companySize || ''}
           onChange={handleInputChange}
         />
         <label>Funding:</label>
@@ -110,7 +118,7 @@ const EditTargetForm = ({ updateTarget, setEditing, currentCompany }) => {
           type='text'
           name='companyFunding'
           placeholder='Total funding'
-          value={values.companyFunding}
+          value={values.companyFunding || ''}
           onChange={handleInputChange}
         />
       </section>
@@ -159,29 +167,26 @@ const EditTargetForm = ({ updateTarget, setEditing, currentCompany }) => {
         </p>
       </section>
 
-      <button type='submit'>Save</button>
-      <button onClick={() => setEditing(false)}>Cancel</button>
-    </Form>
+      {/* Buttons */}
+      {props.setCreating && (
+        <>
+          <button type='submit'>Track</button>
+          <button onClick={() => props.setCreating(false)}>Cancel</button>
+        </>
+      )} :
+      {props.setEditing && (
+        <>
+          <button type='submit'>Save</button>
+          <button onClick={() => props.setEditing(false)}>Cancel</button>
+        </>
+      )}
+    </StyledForm>
   )
 }
 
-EditTargetForm.propTypes = {
-  currentCompany: PropTypes.shape({
-    companyId: PropTypes.string.isRequired,
-    companyName: PropTypes.string.isRequired,
-    companyLocation: PropTypes.string,
-    companyWebsite: PropTypes.string,
-    contactName: PropTypes.string,
-    contactJobTitle: PropTypes.string,
-    contactPhone: PropTypes.string,
-    contactEmail: PropTypes.string,
-    companyMarket: PropTypes.string,
-    companySize: PropTypes.string,
-    companyFunding: PropTypes.string,
-    companyTrackingStatus: PropTypes.string
-  }).isRequired,
-  updateTarget: PropTypes.func.isRequired,
-  setEditing: PropTypes.func.isRequired
+Form.propTypes = {
+  createTarget: PropTypes.func.isRequired,
+  setCreating: PropTypes.func.isRequired
 }
 
-export default EditTargetForm
+export default Form

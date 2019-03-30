@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
-import CreateTargetForm from './components/CreateTargetForm'
-import EditTargetForm from './components/EditTargetForm'
 import Header from './components/Header'
+import Form from './components/Form'
 import ListHeader from './components/ListHeader'
 import List from './components/List'
 import { getData } from './mockData'
@@ -92,7 +91,7 @@ const App = () => {
         )}
         <>
           {editing && (
-            <EditTargetForm
+            <Form
               editing={editing}
               setEditing={setEditing}
               currentCompany={currentCompany}
@@ -100,7 +99,7 @@ const App = () => {
             />
           )}
           {creating && (
-            <CreateTargetForm
+            <Form
               createTarget={createTarget}
               creating={creating}
               setCreating={setCreating}
