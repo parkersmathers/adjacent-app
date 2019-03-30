@@ -26,7 +26,7 @@ const EditTargetForm = ({ updateTarget, setEditing, currentCompany }) => {
           type='text'
           name='companyName'
           placeholder='Company name'
-          value={company.companyName}
+          value={values.companyName}
           onChange={handleInputChange}
           required
         />
@@ -36,7 +36,7 @@ const EditTargetForm = ({ updateTarget, setEditing, currentCompany }) => {
           type='text'
           name='companyLocation'
           placeholder='City'
-          value={company.companyLocation}
+          value={values.companyLocation}
           onChange={handleInputChange}
         />
         <label>Website:</label>
@@ -44,7 +44,7 @@ const EditTargetForm = ({ updateTarget, setEditing, currentCompany }) => {
           type='text'
           name='companyWebsite'
           placeholder='Company website'
-          value={company.companyWebsite}
+          value={values.companyWebsite}
           onChange={handleInputChange}
         />
       </section>
@@ -56,7 +56,7 @@ const EditTargetForm = ({ updateTarget, setEditing, currentCompany }) => {
           type='text'
           name='contactName'
           placeholder='Contact name'
-          value={company.contactName}
+          value={values.contactName}
           onChange={handleInputChange}
         />
         <label>Job Title:</label>
@@ -64,7 +64,7 @@ const EditTargetForm = ({ updateTarget, setEditing, currentCompany }) => {
           type='text'
           name='contactJobtitle'
           placeholder='Contact job title'
-          value={company.contactJobTitle}
+          value={values.contactJobTitle}
           onChange={handleInputChange}
         />
         <label>Phone:</label>
@@ -72,7 +72,7 @@ const EditTargetForm = ({ updateTarget, setEditing, currentCompany }) => {
           type='tel'
           name='contactPhone'
           placeholder='Contact phone'
-          value={company.contactPhone}
+          value={values.contactPhone}
           onChange={handleInputChange}
         />
         {errors.contactPhone && <p>{errors.contactPhone}</p>}
@@ -81,7 +81,7 @@ const EditTargetForm = ({ updateTarget, setEditing, currentCompany }) => {
           type='email'
           name='contactEmail'
           placeholder='Contact email'
-          value={company.contactEmail}
+          value={values.contactEmail}
           onChange={handleInputChange}
         />
         {errors.contactEmail && <p>{errors.contactEmail}</p>}
@@ -94,7 +94,7 @@ const EditTargetForm = ({ updateTarget, setEditing, currentCompany }) => {
           type='text'
           name='companyMarket'
           placeholder='Market'
-          value={company.companyMarket}
+          value={values.companyMarket}
           onChange={handleInputChange}
         />
         <label>Job Title:</label>
@@ -102,7 +102,7 @@ const EditTargetForm = ({ updateTarget, setEditing, currentCompany }) => {
           type='text'
           name='companySize'
           placeholder='Number of employees'
-          value={company.companySize}
+          value={values.companySize}
           onChange={handleInputChange}
         />
         <label>Funding:</label>
@@ -110,7 +110,7 @@ const EditTargetForm = ({ updateTarget, setEditing, currentCompany }) => {
           type='text'
           name='companyFunding'
           placeholder='Total funding'
-          value={company.companyFunding}
+          value={values.companyFunding}
           onChange={handleInputChange}
         />
       </section>
@@ -123,7 +123,7 @@ const EditTargetForm = ({ updateTarget, setEditing, currentCompany }) => {
             name='companyTrackingStatus'
             value='researching'
             onChange={handleInputChange}
-            checked={company.companyTrackingStatus === 'researching'}
+            checked={values.companyTrackingStatus === 'researching'}
           />
           <label>Researching</label>
         </p>
@@ -133,7 +133,7 @@ const EditTargetForm = ({ updateTarget, setEditing, currentCompany }) => {
             name='companyTrackingStatus'
             value='pending approval'
             onChange={handleInputChange}
-            checked={company.companyTrackingStatus === 'pending approval'}
+            checked={values.companyTrackingStatus === 'pending approval'}
           />
           <label>Pending Approval</label>
         </p>
@@ -143,7 +143,7 @@ const EditTargetForm = ({ updateTarget, setEditing, currentCompany }) => {
             name='companyTrackingStatus'
             value='approved'
             onChange={handleInputChange}
-            checked={company.companyTrackingStatus === 'approved'}
+            checked={values.companyTrackingStatus === 'approved'}
           />
           <label>Approved</label>
         </p>
@@ -153,7 +153,7 @@ const EditTargetForm = ({ updateTarget, setEditing, currentCompany }) => {
             name='companyTrackingStatus'
             value='declined'
             onChange={handleInputChange}
-            checked={company.companyTrackingStatus === 'declined'}
+            checked={values.companyTrackingStatus === 'declined'}
           />
           <label>Declined</label>
         </p>

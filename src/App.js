@@ -5,7 +5,7 @@ import Header from './components/Header'
 import ListHeader from './components/ListHeader'
 import List from './components/List'
 import { getData } from './mockData'
-import faker from 'faker'
+import { random } from 'faker'
 import './App.css'
 import { Flex } from 'rebass'
 
@@ -38,7 +38,7 @@ const App = () => {
 
   const createTarget = company => {
     setCreating(true)
-    company.companyId = faker.random.uuid()
+    company.companyId = random.uuid()
 
     setCompanies([...companies, company])
   }
