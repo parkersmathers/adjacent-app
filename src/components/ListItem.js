@@ -28,9 +28,9 @@ const Button = styled.button`
 `
 
 const colors = ['purple', 'green', 'blue', 'orange']
+const rand = colors[Math.floor(Math.random()*colors.length)]
 
 const ListItem = ({ company, deleteTarget, editTarget }) => {
-  const rand = colors[Math.floor(Math.random()*colors.length)]
   return (
     <Row>
       <Flex m={0} p={0} color={rand}>

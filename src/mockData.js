@@ -3,7 +3,7 @@ import faker from 'faker'
 export function getData() {
   function createData(n) {
     let data = []
-    for (let i = 0; i <= n; i++) {
+    for (let i = 0; i < n; i++) {
       data.push({
         companyName: faker.company.companyName(),
         companyLocation: faker.address.city(),
@@ -21,5 +21,5 @@ export function getData() {
     }
     return data
   }
-  return createData(10)
+  return createData(1)
 }
