@@ -56,7 +56,6 @@ const Form = props => {
           onChange={handleInputChange}
         />
       </section>
-
       <section>
         <h2>Key Contact</h2>
         <label>Name:</label>
@@ -94,7 +93,6 @@ const Form = props => {
         />
         {errors.contactEmail && <p>{errors.contactEmail}</p>}
       </section>
-
       <section>
         <h2>Financial Performance</h2>
         <label>Market:</label>
@@ -122,7 +120,6 @@ const Form = props => {
           onChange={handleInputChange}
         />
       </section>
-
       <section>
         <h2>Status</h2>
         <p>
@@ -166,14 +163,13 @@ const Form = props => {
           <label>Declined</label>
         </p>
       </section>
-
       {/* Buttons */}
       {props.setCreating && (
         <>
           <button type='submit'>Track</button>
           <button onClick={() => props.setCreating(false)}>Cancel</button>
         </>
-      )} :
+      )}
       {props.setEditing && (
         <>
           <button type='submit'>Save</button>
