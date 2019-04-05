@@ -1,4 +1,4 @@
-# Insiten Coding Challenge
+# Adjacent App
 
 ## Business Problem
 
@@ -49,7 +49,7 @@ Builds the app for production to the `build` folder.
 
 ## Usage
 
-Create, read, update, and delete items in a list of fake companies. The app uses React Hooks to manage state. 
+Create, read, update, and delete items in a list of fake companies. The app uses React Hooks to manage state.
 
 For example, create a target:
 
