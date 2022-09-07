@@ -1,7 +1,7 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import styled from 'styled-components'
-import { Flex, Box } from 'rebass'
+import React from "react";
+import PropTypes from "prop-types";
+import styled from "styled-components";
+import { Flex, Box } from "rebass";
 
 const Button = styled.button`
   border: 3px solid rgba(46, 139, 87, 0.2);
@@ -9,20 +9,20 @@ const Button = styled.button`
   border-radius: 5px;
   font-size: 18px;
   font-weight: 200;
-`
+`;
 
 const ListHeader = ({ setCreating }) => (
   <Box mx={4}>
     <Flex>
       <h2>Companies</h2>
-      <Box mx='auto' />
+      <Box mx="auto" />
       <Button onClick={() => setCreating(true)}>New</Button>
     </Flex>
   </Box>
-)
+);
 
 ListHeader.propTypes = {
-  setCreating: PropTypes.bool.isRequired
-}
+  setCreating: PropTypes.func.isRequired,
+};
 
-export default ListHeader
+export default ListHeader;

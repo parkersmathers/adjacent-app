@@ -39,11 +39,11 @@ li > div > div {
 }
 
 li div p {
-  font-size: calc(10px + .8vmin);
+  font-size: calc(10px + 0.8vmin);
   margin: 8px 0;
 }
 
-div:first-child>p:first-child {
+div:first-child > p:first-child {
   font-size: calc(10px + 1vmin);
   font-weight: 400;
 }

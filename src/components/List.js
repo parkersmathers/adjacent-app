@@ -1,14 +1,14 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import ListItem from './ListItem'
-import { Box } from 'rebass'
+import React from "react";
+import PropTypes from "prop-types";
+import ListItem from "./ListItem";
+import { Box } from "rebass";
 
 const List = ({ companies, deleteTarget, editTarget }) => {
   return (
     <section>
-      <Box mt='50px'/>
+      <Box mt="50px" />
       <ul>
-        {companies.map(company => (
+        {companies.map((company) => (
           <ListItem
             key={company.companyId}
             company={company}
@@ -18,13 +18,13 @@ const List = ({ companies, deleteTarget, editTarget }) => {
         ))}
       </ul>
     </section>
-  )
-}
+  );
+};
 
 List.propTypes = {
   companies: PropTypes.array.isRequired,
-  deleTarget: PropTypes.func.isRequired,
-  editTarget: PropTypes.func.isRequired
-}
+  deleteTarget: PropTypes.func.isRequired,
+  editTarget: PropTypes.func.isRequired,
+};
 
-export default List
+export default List;
