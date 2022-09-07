@@ -7,7 +7,7 @@ import List from "./components/List";
 import { getData } from "./mockData";
 import faker from "faker";
 import "./App.css";
-import { Flex } from "rebass";
+import { Box, Flex } from "rebass";
 
 const App = () => {
   const companiesData = getData();
@@ -77,39 +77,45 @@ const App = () => {
   };
 
   return (
-    <Flex flexDirection="column">
+    <>
       <Header />
-      <main>
-        {creating === false && editing === false && (
-          <ListHeader setCreating={setCreating} />
-        )}
-        {creating === false && editing === false && (
-          <List
-            companies={companies}
-            deleteTarget={deleteTarget}
-            editTarget={editTarget}
-          />
-        )}
-        <>
-          {editing && (
-            <EditTargetForm
-              editing={editing}
-              setEditing={setEditing}
-              currentCompany={currentCompany}
-              updateTarget={updateTarget}
-            />
-          )}
-          {creating && (
-            <CreateTargetForm
-              createTarget={createTarget}
-              creating={creating}
-              setCreating={setCreating}
-            />
-          )}
-        </>
-      </main>
-      <div className="App-footer" />
-    </Flex>
+      <div style={{ maxWidth: 1100, margin: "0 auto" }}>
+        <Flex flexDirection="column">
+          <Box p={3}>
+            <main>
+              {creating === false && editing === false && (
+                <ListHeader setCreating={setCreating} />
+              )}
+              {creating === false && editing === false && (
+                <List
+                  companies={companies}
+                  deleteTarget={deleteTarget}
+                  editTarget={editTarget}
+                />
+              )}
+              <>
+                {editing && (
+                  <EditTargetForm
+                    editing={editing}
+                    setEditing={setEditing}
+                    currentCompany={currentCompany}
+                    updateTarget={updateTarget}
+                  />
+                )}
+                {creating && (
+                  <CreateTargetForm
+                    createTarget={createTarget}
+                    creating={creating}
+                    setCreating={setCreating}
+                  />
+                )}
+              </>
+            </main>
+            <Box mb={50} />
+          </Box>
+        </Flex>
+      </div>
+    </>
   );
 };
 

@@ -2,11 +2,11 @@ import styled from "styled-components";
 
 const StyledForm = styled.form`
   max-width: 550px;
-  padding: 30px 75px;
+  padding: 30px 10px;
   margin: 0 auto;
   background-color: rgb(255, 248, 250);
-  border-left: 1px solid lightblue;
-  border-right: 1px solid lightblue;
+  // border-left: 1px solid lightblue;
+  // border-right: 1px solid lightblue;
 
   section h2 {
     border-bottom: 1px solid lightgray;

@@ -12,7 +12,7 @@ const Button = styled.button`
 `;
 
 const ListHeader = ({ setCreating }) => (
-  <Box mx={4}>
+  <Box mb={0}>
     <Flex>
       <h2>Companies</h2>
       <Box mx="auto" />

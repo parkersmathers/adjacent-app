@@ -1,4 +1,4 @@
-# Insiten Coding Challenge
+# ARTsy Faker
 
 ## Business Problem
 
@@ -20,7 +20,6 @@ Assumptions:
 - Data does not need to be persisted
   - [x] Use mock data
 - Examples of data to be captured:
-
   - [x] Status (e.g., researching, pending approval, approved, declined)
   - [x] CompanyInfo
   - [x] KeyContacts
@@ -32,24 +31,24 @@ Assumptions:
 
 ## Installation
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). Use yarn or npm to install. In the project directory, you can run:
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). Use npm to install. In the project directory, you can run:
 
-### `yarn start`
+### `npm start`
 
 Runs the app in the development mode.
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-### `yarn test`
+### `npm test`
 
 Launches the test runner in the interactive watch mode.
 
-### `yarn run build`
+### `npm run build`
 
 Builds the app for production to the `build` folder.
 
 ## Usage
 
-Create, read, update, and delete items in a list of fake companies. The app uses React Hooks to manage state. 
+Create, read, update, and delete items in a list of fake companies. The app uses React Hooks to manage state.
 
 For example, create a target:
 
@@ -113,13 +112,9 @@ const handleSubmitForm = event => {
 
 ## To Do
 
-- [ ] Test, test
-- [ ] Add more Hooks: effect, reducer
+- [ ] Write tests
 - [ ] Form validation
-- [ ] Design responsively
-- [ ] Refactor components: logic from view, input from form
-- [ ] Static typechecking: try Typescript
-- [ ] Visual panache: icons, graphs, thumbnails
+- [ ] Improve UX
 
 ### Author
 
